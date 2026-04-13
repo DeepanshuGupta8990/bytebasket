@@ -1,34 +1,44 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Core brand colors */
+  --primary: #E63946;      /* Appetite Red */
+  --primary-hover: #D90429;
+  --secondary: #3E2723;    /* Deep Chocolate */
+  --accent: #F4A261;       /* Crust Orange */
+  
+  /* Background & Surface */
+  --background: #FFFDF9;   /* Warm Vanilla Cream */
+  --surface: #FFFFFF;
+  --surface-alt: #FDF0D5;  /* Soft buttercream */
+  
+  /* Text */
+  --text-primary: #3E2723; /* Dark chocolate for readability */
+  --text-secondary: #5A3E36; /* Milk chocolate */
+  --text-inverse: #FFFFFF;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Typography */
+  --font-logo: var(--font-playfair), serif;
+  --font-main: var(--font-quicksand), sans-serif;
+  
+  /* Spacing */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+  --space-12: 6rem;
+  
+  /* Rounding */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 2rem;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 6px -1px rgba(62, 39, 35, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(62, 39, 35, 0.08);
+  --shadow-lg: 0 20px 25px -5px rgba(62, 39, 35, 0.12);
+  --shadow-primary: 0 10px 20px -5px rgba(230, 57, 70, 0.3);
 }
 
 * {
@@ -37,13 +47,60 @@ body {
   margin: 0;
 }
 
+html {
+  font-family: var(--font-main);
+  background-color: var(--background);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-logo);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Base Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-2);
   }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
 }

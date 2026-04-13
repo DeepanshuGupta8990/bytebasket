@@ -1,0 +1,221 @@
+.menu-section {
+  padding: var(--space-12) 0;
+  background-color: var(--surface);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: var(--space-8);
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.menu-card {
+  background-color: var(--background);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  .menu-card {
+    background-color: var(--surface-alt);
+  }
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 107, 53, 0.2);
+}
+
+.icon-wrapper {
+  font-size: 4rem;
+  margin-bottom: var(--space-4);
+  display: inline-block;
+  background: var(--surface-alt);
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.menu-card:hover .icon-wrapper {
+  background: var(--primary);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.menu-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+
+.menu-card p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.view-details-btn {
+  margin-top: var(--space-4);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.menu-card:hover .view-details-btn {
+  text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(62, 39, 35, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: var(--space-2);
+}
+
+.modal-content {
+  background-color: var(--background);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 550px;
+  max-height: 90vh;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 10;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: var(--primary);
+}
+
+.modal-header {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid rgba(62, 39, 35, 0.1);
+  text-align: center;
+}
+
+.modal-header h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.cake-weight {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.modal-header p {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: var(--space-4) var(--space-6);
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.cake-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cake-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) 0;
+  border-bottom: 1px dashed rgba(62, 39, 35, 0.1);
+}
+
+.cake-item:last-child {
+  border-bottom: none;
+}
+
+.cake-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.cake-pricing {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.discount-price {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.modal-footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid rgba(62, 39, 35, 0.1);
+}

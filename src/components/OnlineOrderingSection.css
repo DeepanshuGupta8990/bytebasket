@@ -1,0 +1,121 @@
+.order-section {
+  padding: var(--space-8) 0;
+  background-color: var(--background);
+}
+
+.order-card {
+  background: linear-gradient(135deg, var(--surface-alt), var(--surface));
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 107, 53, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.order-card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: var(--primary);
+  opacity: 0.1;
+  border-radius: 50%;
+}
+
+.order-card::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 100px;
+  height: 100px;
+  background: var(--accent);
+  opacity: 0.1;
+  border-radius: 50%;
+}
+
+.order-content {
+  position: relative;
+  z-index: 10;
+}
+
+.order-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-2);
+}
+
+.order-content p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin-bottom: var(--space-6);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.delivery-partners {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.partner-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swiggy {
+  background-color: #fc8019;
+  box-shadow: 0 10px 20px -5px rgba(252, 128, 25, 0.4);
+}
+
+.zomato {
+  background-color: #cb202d;
+  box-shadow: 0 10px 20px -5px rgba(203, 32, 45, 0.4);
+}
+
+.partner-btn:hover {
+  transform: translateY(-3px);
+}
+
+.swiggy:hover { box-shadow: 0 15px 25px -5px rgba(252, 128, 25, 0.6); }
+.zomato:hover { box-shadow: 0 15px 25px -5px rgba(203, 32, 45, 0.6); }
+
+.partner-icon {
+  font-size: 1.5rem;
+}
+
+.order-note {
+  font-size: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+.order-note strong {
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .delivery-partners {
+    flex-direction: column;
+    align-items: center;
+  }
+  .partner-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .order-card {
+    padding: var(--space-6) var(--space-4);
+  }
+}
